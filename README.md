@@ -8,7 +8,18 @@ Cci Netty App est une application Flask qui permet d'extraire des adresses e-mai
 - **Extraction d'e-mails** : Extrait les adresses e-mail valides à partir des fichiers CSV.
 - **Interface Utilisateur Simple** : Une interface conviviale pour uploader les fichiers et afficher les e-mails extraits.
 
+## Accès à l'Application
+
+L'application est accessible à l'adresse [app.le-h-herbeth.com](http://app.le-h-herbeth.com). Visitez le site pour commencer à utiliser l'application sans installation locale.
+
 ## Comment l'utiliser
+
+### Si vous utilisez l'application en ligne :
+
+1. **Accédez à l'application** : Ouvrez [app.le-h-herbeth.com](http://app.le-h-herbeth.com) dans votre navigateur.
+2. **Téléchargement de fichier** : Suivez les instructions à l'écran pour télécharger votre fichier CSV et extraire les adresses e-mail.
+
+### Pour une utilisation locale :
 
 1. **Installation** : Assurez-vous d'avoir Python et Flask installés sur votre machine.
 2. **Configuration** : Clonez le dépôt et naviguez dans le dossier du projet.
