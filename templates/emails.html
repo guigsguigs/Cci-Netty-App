@@ -10,29 +10,44 @@
         }
         .container {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
         }
         h1 {
             position: absolute;
-            top: 12%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
             text-align: center;
         }
-        textarea {
+        textarea, .alert, button {
             position: absolute;
-            top: 25%;
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
+        }
+        textarea {
+            top: 25%;
             height: 33%;
         }
-        button {
-            position: absolute;
+        .alert {
+            top: 17%;
+            width: 30%;
+        }
+        button#copyButton {
             top: 60%;
-            left: 50%;
-            transform: translateX(-50%);
+            width: auto;
+        }
+        button#anotherButton {
+            top: 65%;
+            width: auto;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #aaa;
         }
     </style>
 </head>
@@ -42,14 +57,18 @@
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             {% for message in messages %}
-              <div class="alert alert-success text-center" style="position: absolute; top: 19%; left: 50%; transform: translateX(-50%); width: 25%;">
+              <div class="alert alert-success text-center">
                 {{ message }}
               </div>
             {% endfor %}
           {% endif %}
         {% endwith %}
         <textarea id="emails" class="form-control mb-2" readonly>{{ emails }}</textarea>
-        <button onclick="copyEmailsToClipboard()" class="btn btn-primary">Copier les adresses</button>
+        <button id="copyButton" onclick="copyEmailsToClipboard()" class="btn btn-primary">Copier les adresses</button>
+        <button id="anotherButton" onclick="window.location.href='/'" class="btn btn-secondary">Un autre fichier à importer ?</button>
+    </div>
+    <div class="footer">
+        <small>2024 Guillaume Meilgen - v2.0.1</small>
     </div>
     <script>
         function copyEmailsToClipboard() {
