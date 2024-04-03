@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <title>Cci Netty App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -8,26 +9,30 @@
             background-color: #343a40;
             color: #f8f9fa;
         }
+
         .container {
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
             height: 100vh;
+            padding-top: 15%;
+            /* Ajuste l'espace au-dessus du titre */
         }
+
         h1 {
-            position: absolute;
-            margin-top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
             width: 100%;
             text-align: center;
+            margin-bottom: 100px;
+            /* Ajoute de l'espace en dessous du titre */
         }
+
         form {
-            position: absolute;
-            margin-top: 45%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 25%;
+            width: 50%;
+            /* Maintient la largeur */
             text-align: center;
         }
+
         .footer {
             position: absolute;
             bottom: 10px;
@@ -37,24 +42,29 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Charge ton CSV</h1>
+        <h1>Charge ton fichier</h1>
         <form action="/" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" class="form-control mb-2" multiple>
-            <button type="submit" class="btn btn-primary">Charger et Extraire les mails</button>
+            <input type="file" name="file" class="form-control mb-3" multiple>
+            <div class="d-grid gap-2 col-5 mx-auto">
+                <button type="submit" class="btn btn-secondary">Charger et Extraire les mails</button>
+            </div>
+
         </form>
         {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <div class="alert alert-info text-center">
-              {{ messages[0] }}
-            </div>
-          {% endif %}
+        {% if messages %}
+        <div class="alert alert-info text-center" style="margin-top: 20px;">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
         {% endwith %}
         <div class="footer">
-            <small>2024 Guillaume Meilgen - v2.1.0</small>
+            <small>2024 Guillaume Meilgen - v2.1.2</small>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
